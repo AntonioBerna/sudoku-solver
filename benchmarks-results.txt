@@ -1,39 +1,4 @@
-# sudoku-solver
 
-
-
-> **NOTE:** The `solver.c` file contains a detailed explanation of the algorithm I used to solve the Sudoku.
-
-> **NOTE:** The result of the benchmarks is saved in the `benchmarks-results.txt` file.
-
-## mini docs
-
-If you want to try my code I must first clone the repository using the command:
-
-```
-git clone https://github.com/AntonioBerna/sudoku-solver.git
-```
-
-Now you can use the `make` command to generate the executable called  `sudoku` and then you will need to use the `./sudoku` command to run the program.
-
-If you want to add more sudoku you will have to fix the code present in the `problems.h` file (adding new matrices) and also the `NO_PROBLEMS` macro present in the `settings.h` file. Please don't forget to update the following sudoku matrix (present at the bottom of the `problems.h` file):
-
-```c
-static unsigned char (*problems[NO_PROBLEMS + 1])[SIZE][SIZE] = {
-    NULL,
-    &problem1, &problem2, &problem3,
-    &problem4, &problem5, &problem6,
-    &problem7, &problem8, &problem9
-};
-```
-
-That's it!
-
-## hyperfine benchmarks
-
-There is a script in the repository called `benchmarks.sh` that can be used to test the solving of multiple Sudoku puzzles. To use the `benchmarks.sh` script you can use the `./benchmarks.sh` command or the `sh benchmarks.sh` command. What you see below are the results I get using the [hyperfine](https://github.com/sharkdp/hyperfine) library (written in Rust and Python):
-
-```
 Benchmark 1: ./sudoku 1
   Time (mean ± σ):       1.0 ms ±   0.6 ms    [User: 0.7 ms, System: 0.2 ms]
   Range (min … max):     0.4 ms …   2.9 ms    3664 runs
@@ -69,4 +34,4 @@ Benchmark 1: ./sudoku 8
 Benchmark 1: ./sudoku 9
   Time (mean ± σ):     895.0 µs ± 570.8 µs    [User: 611.3 µs, System: 153.0 µs]
   Range (min … max):   458.3 µs … 2484.8 µs    4972 runs
-```
+ 

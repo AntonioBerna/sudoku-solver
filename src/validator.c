@@ -1,7 +1,3 @@
-#include <stdbool.h>
-#include <stdint.h>
-#include <stdio.h>
-
 #include "settings.h"
 
 #define ROW_DISPLACEMENT(i, j) (j * HALF_SIZE % SIZE + i / HALF_SIZE)

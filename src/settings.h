@@ -7,8 +7,8 @@
 
 #define NO_PROBLEMS 9
 
-// Dimensione della riga e della colonna del Sudoku
+// Sudoku row and column size
 #define SIZE 9
 
-// Un terzo della dimensione della riga e della colonna del Sudoku
+// One third the size of the Sudoku row and column
 #define HALF_SIZE (SIZE / 3)

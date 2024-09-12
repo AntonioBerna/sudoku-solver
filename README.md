@@ -2,9 +2,11 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c00f9216d36419b86f0584dd6dafbc4)](https://app.codacy.com/gh/AntonioBerna/sudoku-solver/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-> **NOTE:** The `solver.c` file contains a detailed explanation of the algorithm I used to solve the Sudoku.
+> [!NOTE]
+> The `solver.c` file contains a detailed explanation of the algorithm I used to solve the Sudoku.
 
-> **NOTE:** The result of the benchmarks is saved in the `benchmarks-results.txt` file.
+> [!NOTE]
+> The result of the benchmarks is saved in the `benchmarks-results.txt` file.
 
 ## mini docs
 

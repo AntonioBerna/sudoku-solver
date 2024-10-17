@@ -15,7 +15,7 @@ bool validate(unsigned char (*grid)[SIZE][SIZE]) {
 	}
 
 	for (uint16_t i = 0; i < HALF_SIZE * SIZE; ++i) sum += chk[i];
-	// printf("sum = %u\n", sum);
+	
 	return sum == 13797;
 }
 #undef ROW_DISPLACEMENT

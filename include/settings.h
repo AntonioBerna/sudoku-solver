@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <errno.h>
 
 // Sudoku row and column size
 #define SIZE 9

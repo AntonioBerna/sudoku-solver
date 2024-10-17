@@ -108,5 +108,5 @@ void solve(unsigned char (*problem)[SIZE][SIZE]) {
     }
 
     // function call to solve Sudoku
-    if (!bit_operations(problem, mask)) puts("Sudoku Non Risolvibile!");
+    if (!bit_operations(problem, mask)) puts("The Sudoku is not solvable.");
 }

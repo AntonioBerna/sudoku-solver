@@ -1,3 +1,45 @@
+/*
+
+The Sudoku solving algorithm presented in the code uses a bitwise representation and
+a recursive search to determine whether a Sudoku grid can be filled in a valid way.
+Here is an explanation of the mathematical and logical workings of the algorithm:
+
+The algorithm uses a mask matrix of size HALF_SIZE x SIZE to keep track of the
+numbers already used in each row, column, and 3x3 block of the Sudoku grid.
+
+Each row of the mask matrix represents:
+
+- mask[0]: the numbers in each row.
+- mask[1]: the numbers in each column.
+- mask[2]: the numbers in each 3x3 block.
+
+Each number from 1 to 9 is represented by a specific bit in a 16-bit integer.
+For example, the number 1 is represented by bit 0 (1 << 1), the number 2 by bit 1 (1 << 2), and so on.
+
+Bit Manipulation Functions:
+
+- set_bit(): Sets the bit corresponding to a number in the row, column and block.
+This implies that the number is already present and therefore cannot be used in that context.
+
+- clear_bit(): Turns off the corresponding bit, useful when canceling an attempt (backtracking).
+
+- get_no_zeros: Counts the numbers that cannot be used (zero in the bitmask context).
+This determines how many options remain for a cell.
+
+Recursive Search (Backtracking):
+
+- bit_operations(): This function explores the grid looking for empty cells and calculating the possible choices for each.
+
+- For each empty cell, a "set" of possible numbers is calculated using the current mask.
+If the number of possibilities is less than the previously found, the cell is considered a candidate for a solution attempt.
+
+- If a cell with a unique possibility is found, the algorithm assigns that number and continues recursively.
+If the recursion finds a valid solution, the Sudoku is solved.
+
+- If there are no valid choices, the algorithm cancels the assignment and tries other possibilities.
+
+*/
+
 #include "settings.h"
 
 #define COL_DISPLACEMENT(i, j) (HALF_SIZE * (i / HALF_SIZE) + j / HALF_SIZE)

@@ -48,7 +48,7 @@ static unsigned char (*problems[NO_PROBLEMS + 1])[SIZE][SIZE] = {
 
 That's it!
 
-## hyperfine benchmarks
+## benchmarks
 
 There is a script in the repository called `benchmarks.sh` that can be used to test the solving of multiple Sudoku puzzles. To use the `benchmarks.sh` script you can use the `./benchmarks.sh` command or the `sh benchmarks.sh` command. What you see below are the results I get using the [hyperfine](https://github.com/sharkdp/hyperfine) library (written in Rust and Python):
 

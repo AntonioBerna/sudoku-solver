@@ -1,1 +1,9 @@
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+
+title: "Sudoku Solver"
+description: "Sudoku Solver using Bitwise Operators in C"
+baseurl: "" # Lascia vuoto se il sito è il repository principale
+url: "https://antonioberna.github.io" # Modifica con il tuo URL GitHub Pages
+author:
+  name: "Antonio Bernardini"
+  avatar: "/assets/imgs/me.jpg"

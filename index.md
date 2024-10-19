@@ -170,6 +170,8 @@ The `solve()` function initializes the masks based on the numbers already presen
 
 ## installation and usage
 
+### classic way
+
 If you want to try my code I must first clone the repository using the command:
 
 ```
@@ -206,7 +208,28 @@ static unsigned char (*problems[NO_PROBLEMS + 1])[SIZE][SIZE] = {
 };
 ```
 
+Finally, if you want to remove the executable and object files, you can use the `make clean` command.
+
 That's it!
+
+### docker
+
+Another solution is to download my docker image from the `Docker Hub` registry using the following command:
+
+```
+docker pull antonioberna/sudoku-solver
+```
+
+Now you can run the container using the following command:
+
+```
+docker run --rm antonioberna/sudoku-solver 3
+```
+
+**Note:** The command above will solve the third Sudoku present in the `problems.h` file. If you want to solve another Sudoku, just change the number `3` to another number between 1 and 9.
+{: .notice--info}
+
+Finally, if you want to remove the image from your machine, you can use the `docker rmi antonioberna/sudoku-solver` command.
 
 ## benchmarks
 

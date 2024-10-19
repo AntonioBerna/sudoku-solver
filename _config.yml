@@ -7,8 +7,23 @@ url: "https://antonioberna.github.io"
 author:
   name: "Antonio Bernardini"
   avatar: "/assets/imgs/me.jpg"
+  bio: "Engineers Student, Electronics Hobbyist and Aspirant Embedded Systems Engineer"
+  location: "Italy"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto: antobioberna@live.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/AntonioBerna"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/antonioberna"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/c/CleverCode"
 
-skin: "dark"
+minimal_mistakes_skin: "dark"
 
 plugins:
   - jekyll-include-cache

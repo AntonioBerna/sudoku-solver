@@ -6,4 +6,3 @@ toc: true
 toc_sticky: true
 ---
 
-{ % include README.md % }

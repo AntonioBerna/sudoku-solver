@@ -7,3 +7,6 @@ url: "https://antonioberna.github.io" # Modifica con il tuo URL GitHub Pages
 author:
   name: "Antonio Bernardini"
   avatar: "/assets/imgs/me.jpg"
+
+plugins:
+  - jekyll-include-cache

@@ -103,16 +103,16 @@ Each mask is a 16-bit integer (`uint16_t`), where the bits represent whether or 
 
 ```c
 void set_bit(uint16_t mask[HALF_SIZE][SIZE], uint16_t i, uint16_t j, uint16_t bit_position) {
-	uint16_t bit_on = 1 << bit_position;
+    uint16_t bit_on = 1 << bit_position;
 
-	// ? Set the corresponding bit in the row
-	mask[0][i] |= bit_on;
+    // ? Set the corresponding bit in the row
+    mask[0][i] |= bit_on;
 
-	// ? Set the corresponding bit in the column
-	mask[1][j] |= bit_on;
+    // ? Set the corresponding bit in the column
+    mask[1][j] |= bit_on;
 
-	// ? Set the corresponding bit in the 3x3 block
-	mask[2][COL_DISPLACEMENT(i, j)] |= bit_on;
+    // ? Set the corresponding bit in the 3x3 block
+    mask[2][COL_DISPLACEMENT(i, j)] |= bit_on;
 }
 ```
 
@@ -120,16 +120,16 @@ The `set_bit()` function sets the bit corresponding to the presence of a number 
 
 ```c
 void clear_bit(uint16_t mask[HALF_SIZE][SIZE], uint16_t i, uint16_t j, uint16_t bit_position) {
-	uint16_t bit_off = ~(1 << bit_position);
+    uint16_t bit_off = ~(1 << bit_position);
 
-	// ? Clears the corresponding bit in the row
-	mask[0][i] &= bit_off;
+    // ? Clears the corresponding bit in the row
+    mask[0][i] &= bit_off;
 
-	// ? Clears the corresponding bit in the column
-	mask[1][j] &= bit_off;
+    // ? Clears the corresponding bit in the column
+    mask[1][j] &= bit_off;
 
-	// ? Clears the corresponding bit in the 3x3 block
-	mask[2][COL_DISPLACEMENT(i, j)] &= bit_off;
+    // ? Clears the corresponding bit in the 3x3 block
+    mask[2][COL_DISPLACEMENT(i, j)] &= bit_off;
 }
 ```
 
@@ -153,9 +153,9 @@ To figure out how many numbers are still available (i.e. how many bits are 0 in 
 ```c
 // ? This function counts the number of zeros in the binary representation of the set
 uint16_t get_no_zeros(uint16_t set) {
-	uint16_t count = 0;
-	for (uint16_t i = 1; i <= SIZE; ++i) if ((set & (1 << i)) == 0) ++count;
-	return count;
+    uint16_t count = 0;
+    for (uint16_t i = 1; i <= SIZE; ++i) if ((set & (1 << i)) == 0) ++count;
+    return count;
 }
 ```
 
@@ -223,18 +223,18 @@ If all cells are filled correctly without contradictions, the Sudoku is solved.
 
 ```c
 void solve(unsigned char (*problem)[SIZE][SIZE]) {
-	// ? Bitmask initialization
-	uint16_t mask[HALF_SIZE][SIZE] = { 0 };
+    // ? Bitmask initialization
+    uint16_t mask[HALF_SIZE][SIZE] = { 0 };
 
-	// ? Setting the bits in the bitmask based on the numbers already present in the Sudoku
-	for (uint16_t i = 0; i < SIZE; ++i) {
-		for (uint16_t j = 0; j < SIZE; ++j) {
-			set_bit(mask, i, j, (*problem)[i][j]);
-		}
-	}
+    // ? Setting the bits in the bitmask based on the numbers already present in the Sudoku
+    for (uint16_t i = 0; i < SIZE; ++i) {
+        for (uint16_t j = 0; j < SIZE; ++j) {
+            set_bit(mask, i, j, (*problem)[i][j]);
+        }
+    }
 
-	// ? Function call to solve Sudoku
-	if (!bit_operations(problem, mask)) puts("The Sudoku is not solvable.");
+    // ? Function call to solve Sudoku
+    if (!bit_operations(problem, mask)) puts("The Sudoku is not solvable.");
 }
 ```
 

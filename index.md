@@ -1,5 +1,6 @@
 ---
 layout: single
+title: "Sudoku Solver using bitmasking and backtracking in C"
 author_profile: true
 toc: true
 toc_sticky: true

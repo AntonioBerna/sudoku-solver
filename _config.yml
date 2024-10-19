@@ -2,6 +2,7 @@ remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 minimal_mistakes_skin: "dark"
 
 title: "Sudoku Solver"
+description: "Sudoku Solver using bitmasking and backtracking in C"
 url: "https://antonioberna.github.io"
 baseurl: "/sudoku-solver"
 repository: "AntonioBerna/sudoku-solver"

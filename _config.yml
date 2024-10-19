@@ -40,20 +40,6 @@ footer:
       icon: "fab fa-fw fa-youtube"
       url: "https://www.youtube.com/c/CleverCode"
 
-markdown: kramdowns
-
-kramdown:
-  input: GFM
-  hard_wrap: false
-  syntax_highlighter_opts:
-    css_class: "highlight"
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
 plugins:
   - jekyll-paginate
   - jemoji

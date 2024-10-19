@@ -24,8 +24,7 @@ The algorithm uses an array `mask[HALF_SIZE][SIZE]`, where:
 
 Each mask is a 16-bit integer (`uint16_t`), where the bits represent whether or not a number exists in the row/column/block.
 
-> [!NOTE]
-> For example, if `mask[0][i] = 0b100000000` (in binary), it means that the number 9 is present in row `i` (bit 9 is set to 1).
+**NOTE:** For example, if `mask[0][i] = 0b100000000` (in binary), it means that the number 9 is present in row `i` (bit 9 is set to 1).
 
 ### bit manipulation functions
 

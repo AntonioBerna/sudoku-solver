@@ -8,5 +8,7 @@ author:
   name: "Antonio Bernardini"
   avatar: "/assets/imgs/me.jpg"
 
+skin: "dark"
+
 plugins:
   - jekyll-include-cache

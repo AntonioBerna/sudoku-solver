@@ -2,13 +2,13 @@ remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 
 title: "Sudoku Solver"
 description: "Sudoku Solver using Bitwise Operators in C"
-baseurl: "/sudoku-solver"
-url: "https://antonioberna.github.io"
+baseurl: ""
+url: "https://antonioberna.github.io/sudoku-solver"
 author:
   name: "Antonio Bernardini"
   avatar: "/assets/imgs/me.jpg"
   bio: "Engineers Student, Electronics Hobbyist and Aspirant Embedded Systems Engineer"
-  location: "Italy"
+  location: "Rome, Italy"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"

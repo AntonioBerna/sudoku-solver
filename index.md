@@ -212,7 +212,7 @@ Finally, if you want to remove the executable and object files, you can use the 
 
 That's it!
 
-### docker
+### docker way
 
 Another solution is to download my docker image from the `Docker Hub` registry using the following command:
 

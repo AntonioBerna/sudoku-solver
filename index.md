@@ -8,7 +8,7 @@ toc_sticky: true
 
 # sudoku-solver
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c00f9216d36419b86f0584dd6dafbc4)](https://app.codacy.com/gh/AntonioBerna/sudoku-solver/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) ![GitHub repo size](https://img.shields.io/github/repo-size/AntonioBerna/sudoku-solver)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c00f9216d36419b86f0584dd6dafbc4)](https://app.codacy.com/gh/AntonioBerna/sudoku-solver/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) ![GitHub repo size](https://img.shields.io/github/repo-size/AntonioBerna/sudoku-solver) ![GitHub License](https://img.shields.io/github/license/AntonioBerna/sudoku-solver)
 
 ## algorithm: bitmasking + backtracking
 
@@ -168,7 +168,7 @@ void solve(unsigned char (*problem)[SIZE][SIZE]) {
 
 The `solve()` function initializes the masks based on the numbers already present and calls the recursive function `bit_operations()` to solve the Sudoku.
 
-## mini docs
+## installation and usage
 
 If you want to try my code I must first clone the repository using the command:
 
@@ -209,6 +209,12 @@ static unsigned char (*problems[NO_PROBLEMS + 1])[SIZE][SIZE] = {
 That's it!
 
 ## benchmarks
+
+The following table shows the hardware and software specifications regarding my setup:
+
+| OS                    | CPU                         | RAM       | Benchmark Tool    | Toolchain   |
+| :---:                 | :---:                       | :---:     | :---:             | :---:       |
+| Manjaro Linux v24.0.1 | Intel Core i7-8650U 1.90GHz | 16GB DDR4 | hyperfine v1.18.0 | gcc v14.2.1 |
 
 There is a script in the repository called `benchmarks.sh` that can be used to test the solving of multiple Sudoku puzzles. To use the `benchmarks.sh` script you can use the `./benchmarks.sh` command or the `sh benchmarks.sh` command. What you see below are the results I get using the [hyperfine](https://github.com/sharkdp/hyperfine) library (written in Rust and Python):
 

@@ -1,9 +1,11 @@
 remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: "dark"
 
 title: "Sudoku Solver"
 description: "Sudoku Solver using Bitwise Operators in C"
-baseurl: "/sudoku-solver"
 url: "https://antonioberna.github.io"
+baseurl: "/sudoku-solver"
+repository: "AntonioBerna/sudoku-solver"
 author:
   name: "Antonio Bernardini"
   avatar: "/assets/imgs/me.jpg"
@@ -23,7 +25,22 @@ author:
       icon: "fab fa-fw fa-youtube"
       url: "https://www.youtube.com/c/CleverCode"
 
-minimal_mistakes_skin: "dark"
+footer:
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto: antobioberna@live.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/AntonioBerna"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/antonioberna"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/c/CleverCode"
 
 plugins:
+  - jekyll-paginate
+  - jemoji
   - jekyll-include-cache

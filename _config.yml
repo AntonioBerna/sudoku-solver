@@ -2,8 +2,8 @@ remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 
 title: "Sudoku Solver"
 description: "Sudoku Solver using Bitwise Operators in C"
-baseurl: ""
-url: "https://antonioberna.github.io/sudoku-solver"
+baseurl: "/sudoku-solver"
+url: "https://antonioberna.github.io"
 author:
   name: "Antonio Bernardini"
   avatar: "/assets/imgs/me.jpg"

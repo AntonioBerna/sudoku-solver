@@ -45,6 +45,8 @@ markdown: kramdowns
 kramdown:
   input: GFM
   hard_wrap: false
+  syntax_highlighter_opts:
+    css_class: "highlight"
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char

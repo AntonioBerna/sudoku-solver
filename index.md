@@ -241,38 +241,38 @@ The following table shows the hardware and software specifications regarding my 
 
 There is a script in the repository called `benchmarks.sh` that can be used to test the solving of multiple Sudoku puzzles. To use the `benchmarks.sh` script you can use the `./benchmarks.sh` command or the `sh benchmarks.sh` command. What you see below are the results I get using the [hyperfine](https://github.com/sharkdp/hyperfine) library (written in Rust and Python):
 
-| Command      | Mean [ms] | Min [ms] | Max [ms] | Relative |
-|:---:         | :---:     | :---:    | :---:    | :---:    |
-| `./sudoku 1` | 1.0 ± 0.6 | 0.4      | 2.9      | 1.00     |
+| Command      | Mean [µs]     | Min [µs] | Max [µs] |
+|:---:         | :---:         | :---:    | :---:    |
+| `./sudoku 1` | 586.9 ± 206.7 | 386.2    | 1621.0   |
 
-| Command      | Mean [µs]    | Min [µs] | Max [µs] | Relative |
-|:---:         | :---:        | :---:    | :---:    | :---:    |
-| `./sudoku 2` | 638.3 ± 83.8 | 487.3    | 2038.0   | 1.00     |
+| Command      | Mean [µs]    | Min [µs] | Max [µs] |
+|:---:         | :---:        | :---:    | :---:    |
+| `./sudoku 2` | 505.2 ± 85.6 | 374.6    | 1792.1   |
 
-| Command      | Mean [ms] | Min [ms] | Max [ms] | Relative |
-|:---:         | :---:     | :---:    | :---:    | :---:    |
-| `./sudoku 3` | 3.6 ± 0.4 | 3.1      | 6.2      | 1.00     |
+| Command      | Mean [ms] | Min [ms] | Max [ms] |
+|:---:         | :---:     | :---:    | :---:    |
+| `./sudoku 3` | 1.2 ± 0.1 | 1.0      | 2.5      |
 
-| Command      | Mean [µs]     | Min [µs] | Max [µs] | Relative |
-|:---:         | :---:         | :---:    | :---:    | :---:    |
-| `./sudoku 4` | 807.1 ± 182.6 | 524.7    | 2376.4   | 1.00     |
+| Command      | Mean [µs]     | Min [µs] | Max [µs] |
+|:---:         | :---:         | :---:    | :---:    |
+| `./sudoku 4` | 547.4 ± 89.7  | 415.7    | 1822.3   |
 
-| Command      | Mean [µs]     | Min [µs] | Max [µs] | Relative |
-|:---:         | :---:         | :---:    | :---:    | :---:    |
-| `./sudoku 5` | 646.4 ± 149.3 | 444.7    | 2655.0   | 1.00     |
+| Command      | Mean [µs]     | Min [µs] | Max [µs] |
+|:---:         | :---:         | :---:    | :---:    |
+| `./sudoku 5` | 522.3 ± 77.8  | 406.6    | 1774.0   |
 
-| Command      | Mean [µs]     | Min [µs] | Max [µs] | Relative |
-|:---:         | :---:         | :---:    | :---:    | :---:    |
-| `./sudoku 6` | 646.0 ± 109.9 | 451.2    | 2131.2   | 1.00     |
+| Command      | Mean [µs]     | Min [µs] | Max [µs] |
+|:---:         | :---:         | :---:    | :---:    |
+| `./sudoku 6` | 549.7 ± 51.4  | 432.8    | 1223.6   |
 
-| Command      | Mean [µs]     | Min [µs] | Max [µs] | Relative |
-|:---:         | :---:         | :---:    | :---:    | :---:    |
-| `./sudoku 7` | 794.7 ± 273.9 | 474.1    | 2546.8   | 1.00     |
+| Command      | Mean [µs]     | Min [µs] | Max [µs] |
+|:---:         | :---:         | :---:    | :---:    |
+| `./sudoku 7` | 553.5 ± 104.8 | 412.5    | 3717.1   |
 
-| Command      | Mean [µs]     | Min [µs] | Max [µs] | Relative |
-|:---:         | :---:         | :---:    | :---:    | :---:    |
-| `./sudoku 8` | 826.9 ± 299.8 | 533.7    | 3008.3   | 1.00     |
+| Command      | Mean [µs]     | Min [µs] | Max [µs] |
+|:---:         | :---:         | :---:    | :---:    |
+| `./sudoku 8` | 826.9 ± 299.8 | 533.7    | 3008.3   |
 
-| Command      | Mean [µs]     | Min [µs] | Max [µs] | Relative |
-|:---:         | :---:         | :---:    | :---:    | :---:    |
-| `./sudoku 9` | 622.0 ± 110.1 | 476.9    | 2386.1   | 1.00     |
+| Command      | Mean [µs]     | Min [µs] | Max [µs] |
+|:---:         | :---:         | :---:    | :---:    |
+| `./sudoku 9` | 562.0 ± 49.7  | 446.7    | 1309.6   |

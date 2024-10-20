@@ -48,7 +48,7 @@ static unsigned char problem4[SIZE][SIZE] = {
     {0, 0, 3, 0, 4, 0, 0, 8, 7}
 };
 
-/// 
+// ? From here on I added more problems to test.
 
 static unsigned char problem5[SIZE][SIZE] = {
     {5, 0, 0, 3, 0, 0, 0, 0, 0},

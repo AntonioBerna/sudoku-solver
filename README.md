@@ -5,5 +5,6 @@
 ![GitHub License](https://img.shields.io/github/license/AntonioBerna/sudoku-solver)
 ![Docker Image Size](https://img.shields.io/docker/image-size/antonioberna/sudoku-solver)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fantonioberna.github.io%2Fsudoku-solver%2F)
+![GitHub Created At](https://img.shields.io/github/created-at/antonioberna/sudoku-solver)
 
 Please visit [https://antonioberna.github.io/sudoku-solver](https://antonioberna.github.io/sudoku-solver) for more information.

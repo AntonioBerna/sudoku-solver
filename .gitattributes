@@ -1,1 +1,1 @@
-test/*.c linguist-detectable=true
+test/* linguist-vendored=false

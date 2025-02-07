@@ -1,16 +1,23 @@
-CC=gcc
-CFLAGS=-Wall -Wextra -Werror -Wpedantic -O3 -g -I./include
+CC=clang
+CFLAGS=-Wall -Wextra -Werror -pedantic -O3 -I./include/
+
+SRCS=./src/main.c ./src/solver.c ./src/validator.c
 TARGET=sudoku
-SRCS=src/main.c src/solver.c src/validator.c
-OBJS=$(SRCS:.c=.o)
 
-%.o: %.c
-	$(CC) $< -c $(CFLAGS) -o $@
+TARGET_SRCS=./test/test.c ./src/solver.c ./src/validator.c
+TARGET_TEST=test
 
-all: $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) -o $(TARGET)
+BINARY_DIR=./bin/
 
-.PHONY: clean
+all:
+	@mkdir -p $(BINARY_DIR)
+	$(CC) $(CFLAGS) $(SRCS) -o $(BINARY_DIR)$(TARGET)
+
+test:
+	@mkdir -p $(BINARY_DIR)
+	$(CC) $(CFLAGS) $(TARGET_SRCS) -o $(BINARY_DIR)$(TARGET_TEST)
 
 clean:
-	$(RM) $(TARGET) $(OBJS)
+	$(RM) -r $(BINARY_DIR) ./test/*.log
+
+.PHONY: clean test

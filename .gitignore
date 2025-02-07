@@ -54,5 +54,4 @@ dkms.conf
 # Others
 .DS_Store
 .vscode/
-sudoku
-benchmarks.md
+bin

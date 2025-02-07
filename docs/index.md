@@ -10,6 +10,69 @@ toc_sticky: true
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c00f9216d36419b86f0584dd6dafbc4)](https://app.codacy.com/gh/AntonioBerna/sudoku-solver/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) ![GitHub repo size](https://img.shields.io/github/repo-size/AntonioBerna/sudoku-solver) ![GitHub License](https://img.shields.io/github/license/AntonioBerna/sudoku-solver) ![Docker Image Size](https://img.shields.io/docker/image-size/antonioberna/sudoku-solver)
 
+## usage
+
+### classic way
+
+If you want to try my code I must first clone the repository using the command:
+
+```
+git clone https://github.com/AntonioBerna/sudoku-solver.git
+```
+
+Now you can use the `make` command to generate the executable called `sudoku`, inside `bin/` directory, and then you will need to use the `./bin/sudoku n` command to run the program, where `n` is a number between 1 and 9 (depending on the Sudoku to be solved in `include/problems.h` file). For example, the command `./bin/sudoku 3` generates the following output:
+
+```
+-------------------------
+| 4 9 6 | 1 7 3 | 8 2 5 | 
+| 2 7 8 | 5 9 6 | 4 1 3 | 
+| 3 1 5 | 8 4 2 | 6 7 9 | 
+-------------------------
+| 9 8 1 | 3 5 7 | 2 6 4 | 
+| 5 4 3 | 2 6 8 | 1 9 7 | 
+| 6 2 7 | 9 1 4 | 3 5 8 | 
+-------------------------
+| 1 6 4 | 7 3 5 | 9 8 2 | 
+| 7 3 2 | 6 8 9 | 5 4 1 | 
+| 8 5 9 | 4 2 1 | 7 3 6 | 
+-------------------------
+main return value: 0
+```
+
+If you want to add more sudoku you will have to fix the code present in the `include/problems.h` file (adding new matrices) and also the `NO_PROBLEMS` macro present in the `include/settings.h` file. Please don't forget to update the following sudoku matrix (present at the bottom of the `include/problems.h` file):
+
+```c
+static unsigned char (*problems[NO_PROBLEMS + 1])[SIZE][SIZE] = {
+    NULL,
+    &problem1, &problem2, &problem3,
+    &problem4, &problem5, &problem6,
+    &problem7, &problem8, &problem9
+};
+```
+
+Finally, if you want to remove the executable and object files, you can use the `make clean` command.
+
+That's it!
+
+### docker way
+
+Another solution is to download my docker image from the `Docker Hub` registry using the following command:
+
+```
+docker pull antonioberna/sudoku-solver
+```
+
+Now you can run the container using the following command:
+
+```
+docker run --rm antonioberna/sudoku-solver 3
+```
+
+**Note:** The command above will solve the third Sudoku present in the `include/problems.h` file. If you want to solve another Sudoku, just change the number `3` to another number between 1 and 9.
+{: .notice--info}
+
+Finally, if you want to remove the image from your machine, you can use the `docker rmi antonioberna/sudoku-solver` command.
+
 ## algorithm: bitmasking + backtracking
 
 My algorithm solves Sudoku using bitmasking, a technique that allows you to represent sets of numbers by bits in an integer. The basic idea is to represent which numbers (from 1 to 9) are still available for each row, column and 3x3 block of the Sudoku, using bitmasks. Let's see step by step how it works.
@@ -168,111 +231,48 @@ void solve(unsigned char (*problem)[SIZE][SIZE]) {
 
 The `solve()` function initializes the masks based on the numbers already present and calls the recursive function `bit_operations()` to solve the Sudoku.
 
-## installation and usage
-
-### classic way
-
-If you want to try my code I must first clone the repository using the command:
-
-```
-git clone https://github.com/AntonioBerna/sudoku-solver.git
-```
-
-Now you can use the `make` command to generate the executable called  `sudoku` and then you will need to use the `./sudoku n` command to run the program, where `n` is a number between 1 and 9 (depending on the Sudoku to be solved in `problems.h` file). For example, the command `./sudoku 3` generates the following output:
-
-```
--------------------------
-| 4 9 6 | 1 7 3 | 8 2 5 | 
-| 2 7 8 | 5 9 6 | 4 1 3 | 
-| 3 1 5 | 8 4 2 | 6 7 9 | 
--------------------------
-| 9 8 1 | 3 5 7 | 2 6 4 | 
-| 5 4 3 | 2 6 8 | 1 9 7 | 
-| 6 2 7 | 9 1 4 | 3 5 8 | 
--------------------------
-| 1 6 4 | 7 3 5 | 9 8 2 | 
-| 7 3 2 | 6 8 9 | 5 4 1 | 
-| 8 5 9 | 4 2 1 | 7 3 6 | 
--------------------------
-main return value: 0
-```
-
-If you want to add more sudoku you will have to fix the code present in the `problems.h` file (adding new matrices) and also the `NO_PROBLEMS` macro present in the `settings.h` file. Please don't forget to update the following sudoku matrix (present at the bottom of the `problems.h` file):
-
-```c
-static unsigned char (*problems[NO_PROBLEMS + 1])[SIZE][SIZE] = {
-    NULL,
-    &problem1, &problem2, &problem3,
-    &problem4, &problem5, &problem6,
-    &problem7, &problem8, &problem9
-};
-```
-
-Finally, if you want to remove the executable and object files, you can use the `make clean` command.
-
-That's it!
-
-### docker way
-
-Another solution is to download my docker image from the `Docker Hub` registry using the following command:
-
-```
-docker pull antonioberna/sudoku-solver
-```
-
-Now you can run the container using the following command:
-
-```
-docker run --rm antonioberna/sudoku-solver 3
-```
-
-**Note:** The command above will solve the third Sudoku present in the `problems.h` file. If you want to solve another Sudoku, just change the number `3` to another number between 1 and 9.
-{: .notice--info}
-
-Finally, if you want to remove the image from your machine, you can use the `docker rmi antonioberna/sudoku-solver` command.
-
 ## benchmarks
 
 The following table shows the hardware and software specifications regarding my setup:
 
-| OS                    | CPU                         | RAM       | Benchmark Tool    | Toolchain   |
-| :---:                 | :---:                       | :---:     | :---:             | :---:       |
-| Manjaro Linux v24.0.1 | Intel Core i7-8650U 1.90GHz | 16GB DDR4 | hyperfine v1.18.0 | gcc v14.2.1 |
+| OS                    | CPU                         | RAM       | Toolchain     |
+| :---:                 | :---:                       | :---:     | :---:         |
+| Manjaro Linux v25.0.0 | Intel Core i7-8650U 1.90GHz | 16GB DDR4 | clang v19.1.7 |
 
-There is a script in the repository called `benchmarks.sh` that can be used to test the solving of multiple Sudoku puzzles. To use the `benchmarks.sh` script you can use the `./benchmarks.sh` command or the `sh benchmarks.sh` command. What you see below are the results I get using the [hyperfine](https://github.com/sharkdp/hyperfine) library (written in Rust and Python):
+You can use `make test` command to generate the executable called `test`, inside `bin/` directory, and then you will need to use the `./bin/test` command to run the program. The output will be the following:
 
-| Command      | Mean [µs]     | Min [µs] | Max [µs] |
-|:---:         | :---:         | :---:    | :---:    |
-| `./sudoku 1` | 586.9 ± 206.7 | 386.2    | 1621.0   |
+```
+=================================
+Problem 1 solved in 13.064 μs.
+Problem 1 is valid.
+=================================
+Problem 2 solved in 4.071 μs.
+Problem 2 is valid.
+=================================
+Problem 3 solved in 531.553 μs.
+Problem 3 is valid.
+=================================
+Problem 4 solved in 23.155 μs.
+Problem 4 is valid.
+=================================
+Problem 5 solved in 8.589 μs.
+Problem 5 is valid.
+=================================
+Problem 6 solved in 9.722 μs.
+Problem 6 is valid.
+=================================
+Problem 7 solved in 17.542 μs.
+Problem 7 is valid.
+=================================
+Problem 8 solved in 19.684 μs.
+Problem 8 is valid.
+=================================
+Problem 9 solved in 10.520 μs.
+Problem 9 is valid.
+=================================
+Total time: 637.900 μs.
+=================================
+```
 
-| Command      | Mean [µs]    | Min [µs] | Max [µs] |
-|:---:         | :---:        | :---:    | :---:    |
-| `./sudoku 2` | 505.2 ± 85.6 | 374.6    | 1792.1   |
-
-| Command      | Mean [ms] | Min [ms] | Max [ms] |
-|:---:         | :---:     | :---:    | :---:    |
-| `./sudoku 3` | 1.2 ± 0.1 | 1.0      | 2.5      |
-
-| Command      | Mean [µs]     | Min [µs] | Max [µs] |
-|:---:         | :---:         | :---:    | :---:    |
-| `./sudoku 4` | 547.4 ± 89.7  | 415.7    | 1822.3   |
-
-| Command      | Mean [µs]     | Min [µs] | Max [µs] |
-|:---:         | :---:         | :---:    | :---:    |
-| `./sudoku 5` | 522.3 ± 77.8  | 406.6    | 1774.0   |
-
-| Command      | Mean [µs]     | Min [µs] | Max [µs] |
-|:---:         | :---:         | :---:    | :---:    |
-| `./sudoku 6` | 549.7 ± 51.4  | 432.8    | 1223.6   |
-
-| Command      | Mean [µs]     | Min [µs] | Max [µs] |
-|:---:         | :---:         | :---:    | :---:    |
-| `./sudoku 7` | 553.5 ± 104.8 | 412.5    | 3717.1   |
-
-| Command      | Mean [µs]     | Min [µs] | Max [µs] |
-|:---:         | :---:         | :---:    | :---:    |
-| `./sudoku 8` | 826.9 ± 299.8 | 533.7    | 3008.3   |
-
-| Command      | Mean [µs]     | Min [µs] | Max [µs] |
-|:---:         | :---:         | :---:    | :---:    |
-| `./sudoku 9` | 562.0 ± 49.7  | 446.7    | 1309.6   |
+**Note:** The `test` program generate the `test/sudoku_results.log` file with the results of the tests.
+{: .notice--info}

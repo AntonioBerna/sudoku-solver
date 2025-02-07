@@ -14,7 +14,7 @@ toc_sticky: true
 
 ### Classic way
 
-If you want to try my code I must first clone the repository using the command:
+If you want to try my code you need to clone the repository using the command:
 
 ```
 git clone https://github.com/AntonioBerna/sudoku-solver.git

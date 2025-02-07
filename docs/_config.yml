@@ -8,7 +8,7 @@ baseurl: "/sudoku-solver"
 repository: "AntonioBerna/sudoku-solver"
 author:
   name: "Antonio Bernardini"
-  avatar: ".github/imgs/me.jpg"
+  avatar: "./imgs/me.jpg"
   bio: "Computer Engineering Student passionate about cybersecurity, hardware, firmware, and software, sharing knowledge through innovative projects and impactful code."
   location: "Rome, Italy"
   links:

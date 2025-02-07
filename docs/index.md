@@ -10,9 +10,9 @@ toc_sticky: true
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c00f9216d36419b86f0584dd6dafbc4)](https://app.codacy.com/gh/AntonioBerna/sudoku-solver/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) ![GitHub repo size](https://img.shields.io/github/repo-size/AntonioBerna/sudoku-solver) ![GitHub License](https://img.shields.io/github/license/AntonioBerna/sudoku-solver) ![Docker Image Size](https://img.shields.io/docker/image-size/antonioberna/sudoku-solver)
 
-## usage
+## Usage
 
-### classic way
+### Classic way
 
 If you want to try my code I must first clone the repository using the command:
 
@@ -54,7 +54,7 @@ Finally, if you want to remove the executable and object files, you can use the 
 
 That's it!
 
-### docker way
+### Docker way
 
 Another solution is to download my docker image from the `Docker Hub` registry using the following command:
 
@@ -73,11 +73,11 @@ docker run --rm antonioberna/sudoku-solver 3
 
 Finally, if you want to remove the image from your machine, you can use the `docker rmi antonioberna/sudoku-solver` command.
 
-## algorithm: bitmasking + backtracking
+## Algorithm: bitmasking + backtracking
 
 My algorithm solves Sudoku using bitmasking, a technique that allows you to represent sets of numbers by bits in an integer. The basic idea is to represent which numbers (from 1 to 9) are still available for each row, column and 3x3 block of the Sudoku, using bitmasks. Let's see step by step how it works.
 
-### bitmasking
+### Bitmasking
 
 The algorithm uses an array `mask[HALF_SIZE][SIZE]`, where:
 
@@ -90,7 +90,7 @@ Each mask is a 16-bit integer (`uint16_t`), where the bits represent whether or 
 **Note:** For example, if `mask[0][i] = 0b100000000` (in binary), it means that the number 9 is present in row `i` (bit 9 is set to 1).
 {: .notice--info}
 
-### bit manipulation functions
+### Bit manipulation functions
 
 ```c
 void set_bit(uint16_t mask[HALF_SIZE][SIZE], uint16_t i, uint16_t j, uint16_t bit_position) {
@@ -126,7 +126,7 @@ void clear_bit(uint16_t mask[HALF_SIZE][SIZE], uint16_t i, uint16_t j, uint16_t 
 
 while the `clear_bit()` function does the opposite: when we remove a number from a cell, the corresponding bit is cleared with `&= ~(1 << bit_position)`.
 
-### calculating the set of available numbers
+### Calculating the set of available numbers
 
 When the algorithm needs to decide which number to insert into an empty cell, it computes the set of numbers already present in the row, column, and block of the cell. This is done using a bitwise OR operation:
 
@@ -137,7 +137,7 @@ set = mask[0][i] | mask[1][j] | mask[2][COL_DISPLACEMENT(i, j)];
 
 The OR operation combines the bits set in the three masks: row, column and block, resulting in a set representing the numbers already occupied in that position.
 
-### calculating the possible options
+### Calculating the possible options
 
 To figure out how many numbers are still available (i.e. how many bits are 0 in the set), use the `get_no_zeros()` function:
 
@@ -152,7 +152,7 @@ uint16_t get_no_zeros(uint16_t set) {
 
 Here, the algorithm cycles through the bits from position 1 to 9 and counts how many bits are still 0, i.e. how many numbers can be inserted into the cell.
 
-### search for the best candidate
+### Search for the best candidate
 
 The algorithm explores all the empty cells and looks for the one with the least number of available options, since this reduces the number of attempts. This is done with the following code:
 
@@ -182,7 +182,7 @@ if ((*problem)[i][j] == 0) {
 
 Here we look for the cell with the smallest set of numbers (i.e. the one with the fewest options available).
 
-### backtracking
+### Backtracking
 
 Finally, the algorithm tries to insert every possible number (the 0 bits in the set) into the selected cell, then recursively calls the same function to solve the rest of the Sudoku:
 
@@ -208,7 +208,7 @@ for (uint16_t k = 1; k <= SIZE; ++k) {
 
 If recursion fails, the entered number is removed and another is tried. If no number works, the cell is reset to 0, and the process is backtracked.
 
-### solution
+### Solution
 
 If all cells are filled correctly without contradictions, the Sudoku is solved.
 
@@ -231,7 +231,7 @@ void solve(unsigned char (*problem)[SIZE][SIZE]) {
 
 The `solve()` function initializes the masks based on the numbers already present and calls the recursive function `bit_operations()` to solve the Sudoku.
 
-## benchmarks
+## Benchmarks
 
 The following table shows the hardware and software specifications regarding my setup:
 

@@ -31,12 +31,12 @@ int32_t main(int32_t argc, const char **argv) {
 
 	if (argc != 2) {
 		fprintf(stderr, "Usage: %s <problem number>\n", *argv);
-		exit(EXIT_FAILURE);
+		return EXIT_FAILURE;
 	}
 
 	if (!to_uint8(argv[1], &no)) {
 		fprintf(stderr, "Invalid problem number.\n");
-		exit(EXIT_FAILURE);
+		return EXIT_FAILURE;
 	}
 
 	problem = problems[no];

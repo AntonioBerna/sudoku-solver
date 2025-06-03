@@ -7,4 +7,6 @@
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fantonioberna.github.io%2Fsudoku-solver%2F)
 ![GitHub Created At](https://img.shields.io/github/created-at/antonioberna/sudoku-solver)
 
+This repository contains a C program that solves Sudoku puzzles using bitmasking + backtracking and dancing links techniques. The program is designed to efficiently handle Sudoku problems by representing the possible numbers for each cell as bitmasks, allowing for quick checks and updates during the solving process.
+
 Please visit [https://antonioberna.github.io/sudoku-solver](https://antonioberna.github.io/sudoku-solver) for more information.

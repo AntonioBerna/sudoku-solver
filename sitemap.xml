@@ -1,3 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://github.com/AntonioBerna/sudoku-solver/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/AntonioBerna/sudoku-solver/usage/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/AntonioBerna/sudoku-solver/algorithms/bitmasking-backtracking/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/AntonioBerna/sudoku-solver/algorithms/dancing-links/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/AntonioBerna/sudoku-solver/benchmarks/bitmasking-backtracking/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/AntonioBerna/sudoku-solver/benchmarks/dancing-links/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
 </urlset>
